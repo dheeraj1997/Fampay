@@ -62,16 +62,18 @@ info: Connected to MongoDB successfully.
 **All Requests should be accompanied by the 'Content-Type : application/json' in the header**
 * Get videos list
 ```
-URL - http://localhost:4095/videos/list/:page_no
+URL - http://localhost:4095/videos/list?page_no=page_no
 Method - GET
 Authentication - None
+Query Param - page_no | optional
 ```
 
 * Search video
 ```
-URL - http://localhost:4095/videos/search/:search_string
+URL - http://localhost:4095/videos/search?text=:search_string
 Method - GET
 Authentication - None
+Query Param - page_no | required
 ```
 
 ### Extras

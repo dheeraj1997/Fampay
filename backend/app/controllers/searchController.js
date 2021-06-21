@@ -9,7 +9,7 @@ const VideoModel = dbConnection.model('videos', videoSchema)
  * @param  res
  */
 module.exports.search = (req, res) => {
-    const searchString = req.params.searchtext
+    const searchString = req.query.text
 
     if (searchString === undefined || searchString === null) {
       res.status(200).json({ error: 'Invalid search string supplied!' })

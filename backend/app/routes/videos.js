@@ -8,6 +8,6 @@ module.exports = function (router) {
         })
     router.route('/list')
         .get(getController.getPage)
-    router.route('/search/:searchtext')
+    router.route('/search?text=:searchtext')
         .get(searchController.search)
 }

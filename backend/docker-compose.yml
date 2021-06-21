@@ -1,0 +1,30 @@
+version: "3"
+services:
+  app:
+    build: ./
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "4095:4095"
+    environment:
+      - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+      - GOOGLE_API_REFRESH_INTERVAL=10
+      - HOST=0.0.0.0
+      - NODE_PORT=4095
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+      - MONGO_DBNAME=fampay
+      - YT_SEARCH_QUERY=music
+    command:
+      sh -c 'npm i && npm start'
+    links:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: fampay
+    ports:
+      - "27017:27017"

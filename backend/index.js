@@ -7,7 +7,7 @@ var async = require('async');
 var logger = require('winston');
 
 // Load Environment variables from .env file
-require('dotenv').load();
+require('dotenv').config();
 
 
 
@@ -19,7 +19,7 @@ nconf.argv();
 nconf.env();
 // Load config file for the environment
 require('./config/environments/' + nconf.get('NODE_ENV'));
-logger.info(nconf.get('database'));
+logger.info("[DATABASE] " + nconf.get('database'));
 logger.info('[APP] Starting server initialization');
 
 // Initialize Modules

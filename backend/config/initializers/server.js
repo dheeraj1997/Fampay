@@ -18,12 +18,6 @@ var app;
 var start = function(cb) {
    'use strict';
    app = express();
-   mongoose.connect(config.get('database'), {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false
-   });
    mongoose.Promise = global.Promise;
    app.use(morgan('common'));
    app.use(bodyParser.urlencoded({
@@ -75,8 +69,8 @@ var start = function(cb) {
       next(err);
    });
 
-   app.listen(config.get('NODE_PORT'));
-   logger.info('[SERVER] Listening on port ' + config.get('NODE_PORT'));
+   app.listen(process.env.NODE_PORT);
+   logger.info('[SERVER] Live at ' + `http://${process.env.HOST}:${process.env.NODE_PORT}`);
 
    if (cb) {
       return cb();

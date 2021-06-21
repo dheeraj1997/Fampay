@@ -13,11 +13,11 @@ module.exports.getPage = (req, res) => {
     let skipValue = 0
 
     // Page numbers start from 1, but offset starts from 0 for Mongo.
-    if (req.params.page !== undefined) {
-        if (isNaN(req.params.page) || req.params.page < 0) {
+    if (req.query.pageno !== undefined) {
+        if (isNaN(req.query.pageno) || req.query.pageno < 0) {
             return res.status(500).json({ error: 'Only positive integers allowed for page!' })
         }
-        page = req.params.page - 1
+        page = req.query.pageno - 1
         skipValue = page * 25
     }
 

@@ -6,7 +6,7 @@ module.exports = function (router) {
         .get(function (req, res, next) {
             res.status(200).send("Will be used to get videos");
         })
-    router.route('/get-page/:page')
+    router.route('/list')
         .get(getController.getPage)
     router.route('/search/:searchtext')
         .get(searchController.search)

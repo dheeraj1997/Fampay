@@ -11,17 +11,11 @@ These instructions will get you a copy of the project up and running on your loc
 #### NOTE: Multiple Google API keys can be specified to avoid quota exceed errors. To do this, specify them as a single string, separated using ` | ` (space-pipe-space). Example:
 `GOOGLE_API_KEY = 'KEY1 | KEY2 | KEY3 | KEY4'`
 
-### Using Docker
-Use docker-compose to test the app locally. Make sure to make relevant changes to the environment variables in docker-compose.yml file. Use the following command to build and start the app:
-```bash
-docker-compose up
-```
 ### Installing locally
-Make sure you have node, npm and then follow the below steps
+Make sure you have node, npm, mongo and then follow the below steps
 
 ## Steps
 
-* Install mongo db in your pc and run it
 * Clone this repo or make download the zip file
 * Unzip to a new folder. Call it codebase
 * Inside codebase/backend run npm install
@@ -39,6 +33,12 @@ MONGO_DBNAME='fampay'
 GOOGLE_API_KEY=YOU_API_KEY
 GOOGLE_API_REFRESH_INTERVAL=10
 YT_SEARCH_QUERY='music'
+```
+
+### Using Docker
+Use docker-compose to test the app locally. Make sure to make relevant changes to the environment variables in docker-compose.yml file. Use the following command to build and start the app:
+```bash
+docker-compose up
 ```
 ### Running
 

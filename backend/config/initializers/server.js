@@ -8,7 +8,6 @@ global.messages = require('../helpers/messages');
 var path = require('path');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var mongoose = require('mongoose');
 var RateLimit = require('express-rate-limit');
 global.request = require('request');
 
@@ -18,7 +17,6 @@ var app;
 var start = function(cb) {
    'use strict';
    app = express();
-   mongoose.Promise = global.Promise;
    app.use(morgan('common'));
    app.use(bodyParser.urlencoded({
       extended: true

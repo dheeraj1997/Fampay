@@ -1,4 +1,5 @@
-const dbURL = nconf.get('database');
+const mongoose = require('mongoose');
+const dbURL = config.get('database');
 
 const dbOptions = {
   useNewUrlParser: true,
@@ -18,4 +19,4 @@ dbConnection.on('error', error => {
   Sentry.captureException(error)
 })
 
-export default dbConnection
+module.exports = dbConnection;

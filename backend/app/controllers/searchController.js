@@ -29,7 +29,7 @@ module.exports.search = (req, res) => {
             console.log(`Data fetched successfully. Results: ${result.length}`)
             res.status(200).json({ message: 'Data fetched successfully!', data: result })
         }).catch(err => {
-            console.error(`Error fetching data. Error: ${err}`)
+            console.error(`Error fetching data. Error:`, err)
             res.status(500).json({ error: err })
         })
     }

@@ -34,7 +34,7 @@ var start = function(cb) {
       res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
       next();
    });
-   /*
+
    // max number of requests from one ip in windowMs second
    var apiLimiter = new RateLimit({
       windowMs: 1000, // 15 minutes
@@ -49,9 +49,8 @@ var start = function(cb) {
 
       }
    });
-   //Uncomment the below line to enable rate limiter for your api
-   //app.use('/api/', apiLimiter);
-	 */
+   app.use('/api/', apiLimiter);
+
    require('../../app/routes/index')(app);
 
 
@@ -66,6 +65,12 @@ var start = function(cb) {
       });
       next(err);
    });
+
+   let worker = require('../../worker/fetchVideos')
+   // First data fetch
+   worker.refreshData()
+   // Refresh data every n seconds
+   setInterval(worker.refreshData, process.env.GOOGLE_API_REFRESH_INTERVAL * 1000)
 
    app.listen(process.env.NODE_PORT);
    logger.info('[SERVER] Live at ' + `http://${process.env.HOST}:${process.env.NODE_PORT}`);

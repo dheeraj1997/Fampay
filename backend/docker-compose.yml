@@ -11,7 +11,7 @@ services:
       - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
       - GOOGLE_API_REFRESH_INTERVAL=10
       - HOST=0.0.0.0
-      - PORT=4095
+      - NODE_PORT=4095
       - MONGO_HOST=mongo
       - MONGO_PORT=27017
       - MONGO_DBNAME=fampay

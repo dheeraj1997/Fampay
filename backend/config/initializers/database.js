@@ -11,12 +11,11 @@ const dbOptions = {
 const dbConnection = mongoose.createConnection(dbURL, dbOptions)
 
 dbConnection.on('connected', () => {
-  console.log('Connected to MongoDB successfully.')
+  logger.info('Connected to MongoDB successfully.')
 })
 
 dbConnection.on('error', error => {
-  console.log(`MongoDB connection couldn't be established. ${JSON.stringify(error)}`)
-  Sentry.captureException(error)
+  logger.error(`MongoDB connection couldn't be established. ${JSON.stringify(error)}`)
 })
 
 module.exports = dbConnection;

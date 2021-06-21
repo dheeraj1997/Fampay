@@ -1,4 +1,5 @@
 const getController = require('../controllers/getController');
+const searchController = require('../controllers/searchController');
 
 module.exports = function (router) {
     router.route('/')
@@ -7,4 +8,6 @@ module.exports = function (router) {
         })
     router.route('/get-page/:page')
         .get(getController.getPage)
+    router.route('/search/:searchtext')
+        .get(searchController.search)
 }

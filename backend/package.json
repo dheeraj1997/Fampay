@@ -1,0 +1,36 @@
+{
+  "name": "Fampay-assignment",
+  "version": "1.0.0",
+  "description": "Built on Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dheeraj1997/fampay"
+  },
+  "author": "Dheeraj Varshney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dheeraj1997/fampay/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.13.1",
+    "change-case": "^3.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.13.0",
+    "express-rate-limit": "^2.9.0",
+    "express-validator": "^4.2.1",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "nconf": "^0.8.4",
+    "promise": "^8.0.1",
+    "request": "^2.83.0",
+    "require-dir": "^0.3.0",
+    "validator": "^8.2.0",
+    "winston": "^2.3.1"
+  }
+}

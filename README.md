@@ -84,3 +84,5 @@ NODE_ENV=production
 
 #### Making changes in production/development
 You can change the port number and db name in the two seperate files located inside config/environments
+
+#### Try 1 for hacktober
